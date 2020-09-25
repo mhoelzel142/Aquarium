@@ -15,7 +15,7 @@
   <ItemGroup>
     <EmbeddedResource Update="Resources\Localization\Resources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>Aquarium.Common.Resources.Localization</CustomToolNamespace>
+      <CustomToolNamespace>Waterlog.Common.Resources.Localization</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

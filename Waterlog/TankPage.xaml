@@ -24,7 +24,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Aquariums" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
+        <TextBlock Text="{Binding Title}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
         <Button Grid.Row="3" Grid.Column="5" Content="Add"/>
     </Grid>
 </UserControl>

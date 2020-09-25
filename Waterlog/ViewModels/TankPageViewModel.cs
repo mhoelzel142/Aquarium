@@ -9,12 +9,24 @@ using Waterlog.Database;
 
 namespace Waterlog.ViewModels
 {
-    public class TankPageViewModel
+    public class TankPageViewModel : ViewModelBase
     {
         public ObservableCollection<Aquarium> Aquaria { get; set; }
         private readonly SqliteReader reader;
 
-        public string title = "THIS IS THE TITLE"; // DI test, passing context to user control via XAML binding
+        private string _Title = "This is the title";
+        public string Title
+        {
+            get => _Title;
+            set
+            {
+                if (_Title != value)
+                {
+                    _Title = value;
+                    OnPropertyChanged(nameof(Title));
+                }
+            }
+        }
 
         public TankPageViewModel(SqliteReader reader)
         {

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aquarium.Common\Waterlog.Common.csproj" />
+    <ProjectReference Include="..\Waterlog.Common\Waterlog.Common.csproj" />
   </ItemGroup>
 
 </Project>

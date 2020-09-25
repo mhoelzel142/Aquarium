@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Waterlog.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Waterlog.ViewModels;
 
 namespace Waterlog
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TankPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TankPage : UserControl
     {
-        public MainWindow(MainWindowViewModel viewModel)
+        private TankPageViewModel viewModel;
+
+        public TankPage()
+        {
+            InitializeComponent();
+            // Parameterless ctor for designer
+        }
+
+        public TankPage(TankPageViewModel viewModel)
         {
             InitializeComponent();
             this.DataContext = viewModel;

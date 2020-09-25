@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waterlog", "Aquarium\Waterlog.csproj", "{3D2911ED-E148-49C5-BF7B-6E7878944908}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waterlog", "Waterlog\Waterlog.csproj", "{3D2911ED-E148-49C5-BF7B-6E7878944908}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Waterlog.Database", "Aquarium.Database\Waterlog.Database.csproj", "{0138F169-1646-47D5-BAD5-40F429ED1BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Waterlog.Database", "Waterlog.Database\Waterlog.Database.csproj", "{0138F169-1646-47D5-BAD5-40F429ED1BA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Waterlog.Common", "Aquarium.Common\Waterlog.Common.csproj", "{A658AA36-7AA8-44B2-BCDD-176CB03E3F74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Waterlog.Common", "Waterlog.Common\Waterlog.Common.csproj", "{A658AA36-7AA8-44B2-BCDD-176CB03E3F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

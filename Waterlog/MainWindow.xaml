@@ -21,7 +21,7 @@
             <TabControl Grid.Row="0">
                 <TabItem Header="Tanks">
                     <TabItem.Content>
-                        <local:TankPage DataContext="{Binding }"/>
+                        <local:TankPage DataContext="{Binding tpvm}"/>
                     </TabItem.Content>
                 </TabItem>
                 <TabItem Header="Livestock"/>

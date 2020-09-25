@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3D2911ED-E148-49C5-BF7B-6E7878944908}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Aquarium</RootNamespace>
-    <AssemblyName>Aquarium</AssemblyName>
+    <RootNamespace>Waterlog</RootNamespace>
+    <AssemblyName>Waterlog</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -235,11 +235,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aquarium.Common\Waterlog.Common.csproj">
+    <ProjectReference Include="..\Waterlog.Common\Waterlog.Common.csproj">
       <Project>{a658aa36-7aa8-44b2-bcdd-176cb03e3f74}</Project>
       <Name>Waterlog.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Aquarium.Database\Waterlog.Database.csproj">
+    <ProjectReference Include="..\Waterlog.Database\Waterlog.Database.csproj">
       <Project>{0138f169-1646-47d5-bad5-40f429ed1ba9}</Project>
       <Name>Waterlog.Database</Name>
     </ProjectReference>
