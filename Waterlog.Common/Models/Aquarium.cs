@@ -15,18 +15,5 @@ namespace Waterlog.Common.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
-
-        public int TankId { get; set; }
-
-        [ForeignKey(nameof(TankId))]
-        public Tank Tank { get; set; }
-
-        public IEnumerable<Equipment> Equipment { get; set; }
-
-        public IEnumerable<Livestock> Livestock { get; set; }
-
-        public IEnumerable<Decoration> Decorations { get; set; }
-
-        public IEnumerable<Reading> Readings { get; set; }
     }
 }

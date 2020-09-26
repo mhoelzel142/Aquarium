@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Waterlog.Common.Models;
 using Waterlog.Database;
+using Waterlog.Common.Extensions;
 
 namespace Waterlog.ViewModels
 {
@@ -13,6 +14,20 @@ namespace Waterlog.ViewModels
     {
         public ObservableCollection<Aquarium> Aquaria { get; set; }
         private readonly SqliteReader reader;
+
+        private Aquarium _SelectedAquarium { get; set; }
+        public Aquarium SelectedAquarium
+        {
+            get => _SelectedAquarium;
+            set
+            {
+                if (_SelectedAquarium != value)
+                {
+                    _SelectedAquarium = value;
+                    OnPropertyChanged(nameof(SelectedAquarium));
+                }
+            }
+        }
 
         private decimal _TotalValue { get; set; }
         public decimal TotalValue
@@ -45,6 +60,9 @@ namespace Waterlog.ViewModels
         public TankPageViewModel(SqliteReader reader)
         {
             this.reader = reader;
+
+            Aquaria = new ObservableCollection<Aquarium>();
+            Aquaria.AddAll(reader.GetAll<Aquarium>().ToList());
             TotalValue = 150.54m;
         }
     }

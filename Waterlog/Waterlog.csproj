@@ -163,9 +163,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAquariumWindow.xaml.cs">
+      <DependentUpon>AddAquariumWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LivestockPage.xaml.cs">
       <DependentUpon>LivestockPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddAquariumViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="PerspectiveViewer.xaml.cs">
       <DependentUpon>PerspectiveViewer.xaml</DependentUpon>
@@ -178,6 +182,10 @@
     </Compile>
     <Compile Include="ViewModels\TankPageViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Page Include="AddAquariumWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LivestockPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -34,5 +34,12 @@ namespace Waterlog
             InitializeComponent();
             this.DataContext = viewModel;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var vm = new AddAquariumViewModel(new Database.SqliteContext());
+            var w = new AddAquariumWindow(vm);
+            w.Show();
+        }
     }
 }

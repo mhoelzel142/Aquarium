@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Data.Sqlite;
 
 namespace Waterlog.Database
 {
@@ -27,7 +28,15 @@ namespace Waterlog.Database
 
             // Create tables in Sqlite Db
             RelationalDatabaseCreator creator = (RelationalDatabaseCreator)base.Database.GetService<IDatabaseCreator>();
-            creator.CreateTables();
+            try
+            {
+                creator.CreateTables();
+
+            }
+            catch (SqliteException)
+            {
+
+            }
         }
 
         public DbSet<Aquarium> Aquarium { get; set; }
