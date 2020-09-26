@@ -14,6 +14,20 @@ namespace Waterlog.ViewModels
         public ObservableCollection<Aquarium> Aquaria { get; set; }
         private readonly SqliteReader reader;
 
+        private decimal _TotalValue { get; set; }
+        public decimal TotalValue
+        {
+            get => _TotalValue;
+            set
+            {
+                if (_TotalValue != value)
+                {
+                    _TotalValue = value;
+                    OnPropertyChanged(nameof(TotalValue));
+                }
+            }
+        }
+
         private string _Title = "This is the title";
         public string Title
         {
@@ -31,6 +45,7 @@ namespace Waterlog.ViewModels
         public TankPageViewModel(SqliteReader reader)
         {
             this.reader = reader;
+            TotalValue = 150.54m;
         }
     }
 }

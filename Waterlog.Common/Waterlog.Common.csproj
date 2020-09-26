@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Resources\Localization\Resources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <CustomToolNamespace>Waterlog.Common.Resources.Localization</CustomToolNamespace>

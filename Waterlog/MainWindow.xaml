@@ -7,17 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="450" MinWidth="800" 
         SizeToContent="WidthAndHeight">
-    <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
-            <ToolBar.Items>
-                <Menu AllowDrop="false">
-                </Menu>
-            </ToolBar.Items>
-        </ToolBar>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+    
             <TabControl Grid.Row="0">
                 <TabItem Header="Tanks">
                     <TabItem.Content>
@@ -26,9 +16,6 @@
                 </TabItem>
                 <TabItem Header="Livestock"/>
                 <TabItem Header="Maintenance"/>
-
-
             </TabControl>
-        </Grid>
-    </DockPanel>
+    
 </Window>

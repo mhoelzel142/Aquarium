@@ -10,6 +10,6 @@ namespace Waterlog.Database
         int Update<T>(T input);
         int Delete<T>(T input);
         T GetById<T>(int input);
-        IEnumerable<T> GetAll<T>();
+        IEnumerable<T> GetAll<T>() where T : class;
     }
 }

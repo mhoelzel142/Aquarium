@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Waterlog.Database
 {
@@ -20,7 +22,12 @@ namespace Waterlog.Database
 
         public SqliteContext(DbContextOptions<SqliteContext> options) : base(options)
         {
+            // Ensure database is created, however this does not create tables
             base.Database.Migrate();
+
+            // Create tables in Sqlite Db
+            RelationalDatabaseCreator creator = (RelationalDatabaseCreator)base.Database.GetService<IDatabaseCreator>();
+            creator.CreateTables();
         }
 
         public DbSet<Aquarium> Aquarium { get; set; }
@@ -28,5 +35,9 @@ namespace Waterlog.Database
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<Livestock> Livestock { get; set; }
         public DbSet<Tank> Tank { get; set; }
+        public DbSet<Reading> Reading { get; set; }
+        public DbSet<AquariumTask> AquariumTask { get; set; }
+        public DbSet<AquariumTaskType> AquariumTaskType { get; set; }
+        public DbSet<AquariumTaskFrequency> AquariumTaskFrequency { get; set; }
     }
 }

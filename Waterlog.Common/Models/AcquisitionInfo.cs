@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Waterlog.Common.Models
 {
-    public class AcquisitionMethod
+    public class AcquisitionInfo
     {
         [Key]
         public int Id { get; set; }

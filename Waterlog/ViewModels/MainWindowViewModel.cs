@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using Waterlog.Common.Models;
 
 namespace Waterlog.ViewModels
 {
@@ -11,6 +13,9 @@ namespace Waterlog.ViewModels
     {
         private readonly SqliteReader reader;
         private TankPageViewModel _TankPageViewModel;
+
+        public static ObservableCollection<Aquarium> Aquaria = new ObservableCollection<Aquarium>();
+
         public TankPageViewModel tpvm
         {
             get => _TankPageViewModel;
@@ -28,7 +33,20 @@ namespace Waterlog.ViewModels
         {
             reader = _reader;
             tpvm = new TankPageViewModel(_reader);
+            Initialize();
         }
 
+        private void Initialize()
+        {
+            foreach (var tank in GetTanks())
+            {
+                Aquaria.Add(tank);
+            }
+        }
+
+        private List<Aquarium> GetTanks()
+        {
+            return reader.GetAll<Aquarium>().ToList();
+        }
     }
 }

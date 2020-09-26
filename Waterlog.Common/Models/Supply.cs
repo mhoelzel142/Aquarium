@@ -1,27 +1,26 @@
-﻿using Waterlog.Common.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace Waterlog.Common.Models
 {
-    public class Decoration
+    /// <summary>
+    /// Supplies purchased or acquired for the Aquarium, including chemicals, filter media, medications, and more. 
+    /// </summary>
+    public class Supply
     {
         [Key]
         public int Id { get; set; }
 
-        public string DecorationName { get; set; }
-
         public int CostId { get; set; }
-
-        public int AquariumId { get; set; }
 
         [ForeignKey(nameof(CostId))]
         public Cost CostInfo { get; set; }
 
-        [ForeignKey(nameof(AquariumId))]
-        public Aquarium Aquarium { get; set; }
+        public string Name { get; set; }
+
+        public string Description { get; set; }
     }
 }
