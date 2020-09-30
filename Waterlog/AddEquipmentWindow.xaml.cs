@@ -11,39 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Waterlog.Common.Models;
-using Waterlog.Database;
 using Waterlog.ViewModels;
 
 namespace Waterlog
 {
     /// <summary>
-    /// Interaction logic for AddAquariumWindow.xaml
+    /// Interaction logic for AddEquipmentPage.xaml
     /// </summary>
-    public partial class AddAquariumWindow : Window
+    public partial class AddEquipmentWindow : Window
     {
-        private AddAquariumViewModel vm;
-
-        public AddAquariumWindow()
+        private AddEquipmentViewModel vm;
+        public AddEquipmentWindow()
         {
             InitializeComponent();
         }
-
-        public AddAquariumWindow(AddAquariumViewModel _vm)
+        public AddEquipmentWindow(AddEquipmentViewModel _vm)
         {
             vm = _vm;
             InitializeComponent();
             this.DataContext = vm;
         }
 
-        // TODO: Rewrite this using RelayCommand/MVVM, or install MVVMLight. Quick and dirty test of CRUD and to get some stuff in the database
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            vm.Aquarium = new Aquarium();
-            vm.Aquarium.Name = txtName.Text;
-            vm.SaveAquarium();
 
-            this.Close();
         }
     }
 }

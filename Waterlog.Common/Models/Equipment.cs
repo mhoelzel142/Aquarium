@@ -12,14 +12,18 @@ namespace Waterlog.Common.Models
         [Key]
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
         public int CostInfoId { get; set; }
 
         public int AquariumId { get; set; }
 
         [ForeignKey(nameof(CostInfoId))]
-        public Cost CostInfo { get; set; }
+        public virtual Cost CostInfo { get; set; }
 
         [ForeignKey(nameof(AquariumId))]
-        public Aquarium Aquarium { get; set; }
+        public virtual Aquarium Aquarium { get; set; }
     }
 }

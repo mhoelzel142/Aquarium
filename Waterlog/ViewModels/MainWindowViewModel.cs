@@ -14,6 +14,17 @@ namespace Waterlog.ViewModels
         private readonly SqliteReader reader;
         private TankPageViewModel _TankPageViewModel;
 
+        private Aquarium _SelectedAquarium { get; set; }
+        public Aquarium SelectedAquarium
+        {
+            get => _SelectedAquarium;
+            set
+            {
+                _SelectedAquarium = value;
+                OnPropertyChanged(nameof(SelectedAquarium));
+            }
+        }
+
         public static ObservableCollection<Aquarium> Aquaria = new ObservableCollection<Aquarium>();
 
         public TankPageViewModel tpvm
@@ -33,6 +44,7 @@ namespace Waterlog.ViewModels
         {
             reader = _reader;
             tpvm = new TankPageViewModel(_reader);
+            tpvm.SelectedAquarium = SelectedAquarium;
             Initialize();
         }
 

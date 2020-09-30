@@ -12,12 +12,14 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/> <!-- Carousel -->
-            <RowDefinition Height="6*"/> <!-- Main Content -->
-            <RowDefinition Height="1*"/> <!-- Button Row -->
+            <RowDefinition Height="3*"/>
+            <!-- Carousel -->
+            <RowDefinition Height="6*"/>
+            <!-- Main Content -->
+            <RowDefinition Height="1*"/>
+            <!-- Button Row -->
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Title}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
-        <ListView ItemsSource="{Binding Aquaria}">
+        <ListView ItemsSource="{Binding Aquaria}" SelectedItem="{Binding SelectedAquarium, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -56,6 +58,19 @@
                 <Label Content="Aquarium Name:"/>
                 <TextBox Text="{Binding AquariumName}" Height="24" VerticalAlignment="Center" Width="Auto" Margin="10,0"/>
             </DockPanel>
+            <Grid Grid.Column="1" Grid.RowSpan="6">
+                <TabControl>
+                    <TabItem Header="Parameters">
+                        <local:ParametersControl/>
+                    </TabItem>
+                    <TabItem Header="Livestock"></TabItem>
+                    <TabItem Header="Equipment">
+                        <local:EquipmentPage DataContext="{Binding epvm}"/>
+                    </TabItem>
+                    <TabItem Header="Decorations"></TabItem>
+                    <TabItem Header="Notes"></TabItem>
+                </TabControl>
+            </Grid>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

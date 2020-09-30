@@ -43,20 +43,6 @@ namespace Waterlog.ViewModels
             }
         }
 
-        private string _Title = "This is the title";
-        public string Title
-        {
-            get => _Title;
-            set
-            {
-                if (_Title != value)
-                {
-                    _Title = value;
-                    OnPropertyChanged(nameof(Title));
-                }
-            }
-        }
-
         public TankPageViewModel(SqliteReader reader)
         {
             this.reader = reader;
@@ -65,5 +51,19 @@ namespace Waterlog.ViewModels
             Aquaria.AddAll(reader.GetAll<Aquarium>().ToList());
             TotalValue = 150.54m;
         }
+
+
+        public ObservableCollection<Equipment> Equipment = new ObservableCollection<Equipment>()
+        {
+            new Equipment()
+            {
+                Name = "Penn Plax Cascade 1000 Canister Filter",
+                Description = "Canister filter",
+                CostInfo = new Cost()
+                {
+                    PurchasePrice = 77.53
+                }
+            }
+        };
     }
 }

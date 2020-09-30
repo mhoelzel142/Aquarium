@@ -22,6 +22,7 @@ namespace Waterlog
     public partial class TankPage : UserControl
     {
         private TankPageViewModel viewModel;
+        public EquipmentPageViewModel epvm { get; set; }
 
         public TankPage()
         {
@@ -29,8 +30,9 @@ namespace Waterlog
             // Parameterless ctor for designer
         }
 
-        public TankPage(TankPageViewModel viewModel)
+        public TankPage(TankPageViewModel _viewModel)
         {
+            viewModel = _viewModel;
             InitializeComponent();
             this.DataContext = viewModel;
         }

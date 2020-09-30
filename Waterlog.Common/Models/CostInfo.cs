@@ -21,6 +21,6 @@ namespace Waterlog.Common.Models
         public int AcquisitionInfoId { get; set; }
 
         [ForeignKey(nameof(AcquisitionInfoId))]
-        public AcquisitionInfo AcquiredFrom { get; set; }
+        public virtual AcquisitionInfo AcquiredFrom { get; set; }
     }
 }
